@@ -1,0 +1,400 @@
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@400;500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap");
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: "Quicksand", sans-serif;
+  // font-family: "Raleway", sans-serif;
+}
+
+$textColor: hsl(243, 87%, 12%);
+
+nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 50px 40px;
+  ul {
+    list-style-type: none;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    li {
+      a {
+        display: block;
+        padding: 10px 20px;
+        text-decoration: none;
+        color: $textColor;
+        font-size: 1.2rem;
+        font-weight: 600;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@mixin center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin input {
+  input {
+    padding: 10px;
+    display: block;
+    border: 1px solid black;
+    outline: none;
+    font-family: "Quicksand", sans-serif;
+    border-radius: 5px;
+    font-size: 1.1rem;
+  }
+  button {
+    display: block;
+    padding: 10px;
+    border: none;
+    background-color: hsl(224, 93%, 58%);
+    color: white;
+    font-weight: 600;
+    font-size: 1.1rem;
+    font-family: "Quicksand", sans-serif;
+    border-radius: 5px;
+    &:hover {
+      opacity: 0.8;
+      cursor: pointer;
+    }
+  }
+}
+
+@mixin textContent {
+  width: 50%;
+  h1 {
+    font-size: 2.5rem;
+    color: $textColor;
+  }
+  p {
+    padding-top: 10px;
+    font-weight: 500;
+    color: $textColor;
+  }
+}
+
+@mixin imageContent {
+  width: 50%;
+  img {
+    width: 100%;
+  }
+}
+
+.intro {
+  @include center();
+  padding: 0 100px;
+  .text {
+    @include textContent();
+    .input-section {
+      width: 80%;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      @include input();
+      padding-top: 20px;
+      input {
+        width: 60%;
+      }
+      button {
+        width: 35%;
+      }
+    }
+    .warning {
+      color: red;
+      padding-top: 10px;
+      display: none;
+      font-weight: 600;
+    }
+  }
+  .image {
+    @include imageContent();
+  }
+}
+
+.productive {
+  margin-top: 100px;
+  width: 100%;
+  .bg {
+    width: 100%;
+    display: block;
+  }
+  .content {
+    @include center();
+    padding: 50px 100px;
+    background-color: #f8f8fe;
+    .text {
+      @include textContent();
+      a {
+        display: inline-block;
+        padding-top: 10px;
+        color: hsl(170, 45%, 43%);
+        font-weight: 600;
+        text-decoration: none;
+        border-bottom: 1px solid currentColor;
+        &:hover {
+          opacity: 0.7;
+        }
+      }
+      .quotation {
+        padding: 20px;
+        width: 300px;
+        margin-top: 20px;
+        box-shadow: 0px 0px 10px grey;
+        background-color: white;
+        border-radius: 5px;
+        p {
+          font-size: 0.8rem;
+          font-weight: 600;
+          line-height: 20px;
+        }
+        .profile {
+          display: flex;
+          align-items: center;
+          justify-content: left;
+          padding-top: 20px;
+          img {
+            width: 50px;
+            border-radius: 50%;
+          }
+          .title-card {
+            display: flex;
+            justify-content: left;
+            flex-direction: column;
+            padding-left: 10px;
+            p {
+              font-size: 1rem;
+              font-weight: 700;
+              line-height: initial;
+            }
+            span {
+              font-size: 0.8rem;
+              font-weight: 600;
+              display: block;
+            }
+          }
+        }
+      }
+    }
+    .image {
+      @include imageContent();
+    }
+  }
+}
+
+.access {
+  display: flex;
+  align-items: center;
+  background-color: hsl(238, 22%, 44%);
+  color: white;
+  padding: 100px;
+  .text {
+    @include textContent();
+    h1,
+    p {
+      color: white;
+    }
+  }
+  .input {
+    width: 50%;
+    .input-section {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      padding: 20px 50px;
+      @include input();
+      input {
+        width: 100%;
+      }
+      button {
+        width: 300px;
+        margin-top: 10px;
+      }
+    }
+    .warning {
+      color: rgb(255, 166, 0);
+      font-weight: 700;
+      padding-top: 10px;
+      display: none;
+      margin-left: 50px;
+    }
+  }
+}
+
+footer {
+  width: 100%;
+  background-color: $textColor;
+  color: white;
+  padding: 100px;
+  .flex-container {
+    display: flex;
+    flex-wrap: wrap;
+    .box {
+      flex: 25%;
+      min-width: 25%;
+      display: flex;
+      justify-content: left;
+      flex-direction: column;
+      padding-top: 20px;
+      span {
+        display: block;
+        padding: 10px 0;
+        img {
+          padding-right: 10px;
+        }
+      }
+      a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px 0;
+        font-size: 1.1rem;
+        &:hover {
+          color: hsl(238, 22%, 44%);
+        }
+      }
+      &:last-child {
+        flex-direction: row;
+        span {
+          display: block;
+          margin: 10px;
+          width: 40px;
+          height: 40px;
+          border: 2px solid white;
+          @include center();
+          border-radius: 20px;
+          &:hover {
+            color: hsl(224, 93%, 58%);
+            border-color: hsl(224, 93%, 58%);
+            cursor: pointer;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1048px) {
+  .intro {
+    padding: 0 20px;
+  }
+  .productive .content,
+  .access,
+  footer {
+    padding: 50px 20px;
+  }
+}
+
+@media screen and (max-width: 852px) {
+  .intro {
+    .text {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+  .productive .content .text {
+    h1 {
+      font-size: 2rem;
+    }
+  }
+
+  .access {
+    .input .input-section {
+      input,
+      button {
+        width: 100%;
+      }
+    }
+  }
+  footer .flex-container .box {
+    flex: 50%;
+    min-width: 50%;
+  }
+}
+
+@media screen and (max-width: 624px) {
+  .intro {
+    .text {
+      h1 {
+        font-size: 2rem;
+      }
+    }
+  }
+  .productive .content,
+  .intro {
+    flex-direction: column-reverse;
+    .text,
+    .image {
+      width: 100%;
+      padding: 20px 0;
+      text-align: center;
+      .input-section {
+        width: 100%;
+      }
+    }
+  }
+  .productive .text {
+    @include center();
+    flex-direction: column;
+  }
+  .access {
+    flex-direction: column;
+    .input,
+    .text {
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (max-width: 484px) {
+  footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    .flex-container .box {
+      flex: 100%;
+      min-width: 100%;
+      align-items: center;
+      justify-content: center;
+    }
+  }
+  .access {
+    .input {
+      .input-section {
+        padding: 0px;
+      }
+    }
+  }
+
+  .intro {
+    .text {
+      .input-section {
+        @include center();
+        flex-direction: column;
+        input {
+          width: 100%;
+        }
+        button {
+          width: 100%;
+          margin-top: 10px;
+        }
+      }
+    }
+  }
+}
